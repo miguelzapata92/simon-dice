@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/miguelzapata92/simon-dice/issues"
   },
-  "homepage": "https://github.com/miguelzapata92/simon-dice#readme"
+  "homepage": "https://github.com/miguelzapata92/simon-dice#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  }
 }
