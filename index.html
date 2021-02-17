@@ -5,67 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    
     <style type="text/css">
-    .cuadro {
-        height: 200px;
-       
-        opacity: 0,8;
-        transition: opacity 500ms;
-        border-top-left-radius: 20px;
-
+    h1 {
+      color:white
+    }
+    #ronda {
+        color: white;
+    }
+    p {
+        color: white;
+    }
+    body {
+        background-color: black;
+        text-align: center;
         
     }
+    
+    .cuadro {
+        border: 2px solid white;
+        opacity: 0,8;
+        transition: opacity 500ms;
+        height: 200px;
+        width: 200px;
+        cursor: pointer;
+    }
+  
     #cuadro-1 {
         background-color: green;
+        border-top-left-radius: 200px;
+    
     }
     #cuadro-2 {
         background-color: red;
+        border-top-right-radius: 200px;
+        
     }
     #cuadro-3 {
         background-color: yellow;
+        border-bottom-left-radius: 200px;
+      
     }
     #cuadro-4 {
         background-color: blue;
+        border-bottom-right-radius: 200px;
+    
     }
     </style>
 </head>
 <body>
     <h1>Simón Dice</h1>
-<div class="contenedor">
-    <div class="row">
-        <div class="col-8">
-            <div class="alert alert-primary" role="alert" id="estado">
-                <p>¿Qué tal si empezamos a jugar?</p>
+    <div class="contenedor">
+        <div class="row">
+            <div class="col-8">
+                <div class="alert alert-primary" role="alert" id="estado">
+                    <p>¿Qué tal si empezamos a jugar?</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <p>Ronda # <strong id="ronda">0</strong></p></div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" id="boton-empezar">Empecemos</button>
+            </div>
             </div>
         </div>
-        <div class="col-2">
-            <p>Ronda # <strong id="ronda">0</strong></p>
-        </div>
-        <div class="col">
-            <button type="button" class="btn btn-primary">Empecemos</button>
-        </div>
-        </div>
-    </div>
-    
-<div class="tablero">
-    <div class="row">
-        <div class="col">
+    <div class="tablero" id="tablero">
+        <div class="row" >
             <div class="cuadro" id="cuadro-1"></div>
+            <div class="cuadro" id="cuadro-2" ></div>
         </div>
-        <div class="col">
-            <div class="cuadro" id="cuadro-2"></div>
-        </div>
-      
-    </div>
-    <div class="row">
-        <div class="col">
+        <div class="row">
             <div class="cuadro" id="cuadro-3"></div>
-        </div>
-        <div class="col">
             <div class="cuadro" id="cuadro-4"></div>
         </div>
     </div>
-</div>
+
+
+
 <script src="main.js"></script>
 </body>
 </html>
