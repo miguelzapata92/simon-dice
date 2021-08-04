@@ -44,11 +44,11 @@ function manejarRonda() {
 
 /** Turno del Usuario **/
 
-manejarInputUsuario(e) {
+function manejarInputUsuario(e) {
+    console.log(e);
     const $cuadro = e.target;
     resaltar($cuadro);
     secuenciaUsuario.push($cuadro);
-
 }
 
 function obtenerCuadroAleatorio() {
@@ -72,4 +72,13 @@ function desbloquearInputUsuario() {
     document.querySelectorAll('.cuadro').forEach(function($cuadro) {
         $cuadro.onclick = manejarInputUsuario();
     });
+}
+
+/** Utilidades **/
+
+function resaltar($cuadro) {
+    $cuadro.style.opacity = 1;
+    setTimeout(function() {
+        $cuadro.style.opacity = 0.7;
+    }, 500)
 }
