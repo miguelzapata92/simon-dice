@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+
 </head>
 <body>
-    
+    <h1>Simón Dice</h1>
+    <div class="contenedor">
+        <div class="row">
+            <div class="col-8">
+                <div class="alert alert-primary" role="alert" id="estado">
+                    <p>¿Qué tal si empezamos a jugar?</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <p>Ronda # <strong id="ronda">0</strong></p></div>
+            <div class="col">
+                <button type="button" id="btnComenzar" class="btn btn-primary" id="boton-empezar">Empecemos</button>
+            </div>
+        </div>
+    </div>
+    <div class="tablero">
+        <div class="row">
+            <div class="cuadro" id="cuadro-1"></div>
+            <div class="cuadro" id="cuadro-2"></div>
+        </div>
+        <div class="row">
+            <div class="cuadro" id="cuadro-3"></div>
+            <div class="cuadro" id="cuadro-4"></div>
+        </div>
+    </div>
+
+
+
+<script src="main.js"></script>
 </body>
 </html>
