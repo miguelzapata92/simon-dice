@@ -4,13 +4,17 @@ let ronda = 0
 const $btnComenzar = document.querySelector("#btnComenzar")
 $btnComenzar.onclick = comenzarJuego;
 
+bloquearInputUsuario();
 
 function comenzarJuego() {
     manejarRonda();
     cambiarEstado();
 }
 
+/** Turno de la Máquina **/
+
 function manejarRonda() {
+    bloquearInputUsuario();
     bloquearBoton();
     $cuadroAleatorio = obtenerCuadroAleatorio();
     secuenciaMaquina.push($cuadroAleatorio);
@@ -38,6 +42,14 @@ function manejarRonda() {
     actualizarNumeroRonda();
 }
 
+/** Turno del Usuario **/
+
+manejarInputUsuario(e) {
+    const $cuadro = e.target;
+    resaltar($cuadro);
+    secuenciaUsuario.push($cuadro);
+
+}
 
 function obtenerCuadroAleatorio() {
 
@@ -45,4 +57,19 @@ function obtenerCuadroAleatorio() {
 
 function actualizarNumeroRonda(ronda) {
     document.querySelector("#ronda").textContent = ronda;
+}
+
+
+/**Bloqueo y Desbloqueo de los Inputs **/
+
+function bloquearInputUsuario() {
+    document.querySelectorAll('.cuadro').forEach(function($cuadro) {
+        $cuadro.onclick = function() {};
+    });
+}
+
+function desbloquearInputUsuario() {
+    document.querySelectorAll('.cuadro').forEach(function($cuadro) {
+        $cuadro.onclick = manejarInputUsuario();
+    });
 }
