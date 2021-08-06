@@ -8,7 +8,7 @@ bloquearInputUsuario();
 
 function comenzarJuego() {
     manejarRonda();
-    cambiarEstado();
+    //cambiarEstado();
 }
 
 /** Turno de la Máquina **/
@@ -39,20 +39,36 @@ function manejarRonda() {
 
     secuenciaUsuario = [];
     ronda++;
-    actualizarNumeroRonda();
+    actualizarNumeroRonda(ronda);
+
 }
 
 /** Turno del Usuario **/
 
 function manejarInputUsuario(e) {
-    console.log(e);
     const $cuadro = e.target;
     resaltar($cuadro);
     secuenciaUsuario.push($cuadro);
+
+    const $cuadroMaquina = secuenciaMaquina[secuenciaUsuario.length - 1];
+    if ($cuadro.id !== $cuadroMaquina.id) {
+        alert("perdiste");
+        return;
+    }
+
+    if (secuenciaUsuario.length === secuenciaMaquina.length) {
+        bloquearInputUsuario();
+        setTimeout(manejarRonda, 1000);
+    }
+
 }
 
-function obtenerCuadroAleatorio() {
 
+
+function obtenerCuadroAleatorio() {
+    $cuadros = document.querySelectorAll('.cuadro');
+    indice = Math.floor(Math.random() * $cuadros.length);
+    return $cuadros[indice]
 }
 
 function actualizarNumeroRonda(ronda) {
@@ -70,15 +86,17 @@ function bloquearInputUsuario() {
 
 function desbloquearInputUsuario() {
     document.querySelectorAll('.cuadro').forEach(function($cuadro) {
-        $cuadro.onclick = manejarInputUsuario();
+        $cuadro.onclick = manejarInputUsuario;
     });
 }
+
+
 
 /** Utilidades **/
 
 function resaltar($cuadro) {
     $cuadro.style.opacity = 1;
     setTimeout(function() {
-        $cuadro.style.opacity = 0.7;
+        $cuadro.style.opacity = 0.5;
     }, 500)
 }
