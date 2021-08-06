@@ -1,52 +1,54 @@
 h1 {
-color:white
+    color: white
 }
+
 #ronda {
     color: white;
 }
+
 p {
     color: white;
 }
+
 body {
     background-color: black;
     text-align: center;
-    
 }
-.row{
+
+.row {
     justify-content: center;
 }
+
 .cuadro {
     border: 2px solid white;
-    opacity: 0,8;
+    opacity: 0.5;
     transition: opacity 500ms;
     height: 200px;
     width: 200px;
     cursor: pointer;
     text-align: center;
-
 }
 
 #cuadro-1 {
     background-color: green;
     border-top-left-radius: 200px;
-
 }
+
 #cuadro-2 {
     background-color: red;
     border-top-right-radius: 200px;
-    
 }
+
 #cuadro-3 {
     background-color: yellow;
     border-bottom-left-radius: 200px;
-
 }
+
 #cuadro-4 {
     background-color: blue;
     border-bottom-right-radius: 200px;
-
 }
+
 .none {
     display: block;
 }
-
